@@ -8,8 +8,9 @@ public class Candy extends Item {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 
-    public void printMessage() {
-        System.out.println("Sugar, Sugar, so Sweet!");
+    @Override
+    public String printMessage() {
+        return "Sugar, Sugar, so Sweet!";
     }
 
 }

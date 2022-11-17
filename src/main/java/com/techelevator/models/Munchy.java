@@ -8,8 +8,9 @@ public class Munchy extends Item {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 
-    public void printMessage() {
-        System.out.println("Munchy, Munchy, so Good!");
+    @Override
+    public String printMessage() {
+        return "Munchy, Munchy, so Good!";
     }
 
 }

@@ -8,8 +8,9 @@ public class Gum extends Item {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 
-    public void printMessage() {
-        System.out.println("Chewy, Chewy, Lots O Bubbles!");
+    @Override
+    public String printMessage() {
+        return "Chewy, Chewy, Lots O Bubbles!";
     }
 
 }

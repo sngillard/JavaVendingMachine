@@ -23,13 +23,14 @@ public abstract class Item {
 
     //constrcutor
     public Item(String itemName, String itemLocation, BigDecimal itemPrice) {
-        itemName= itemName;
-        itemLocation = itemLocation;
-        itemPrice = itemPrice;
+        this.itemName= itemName;
+        this.itemLocation = itemLocation;
+        this.itemPrice = itemPrice;
     }
 
     //abstract method (public by default)
-    void printMessage(){
+    public String printMessage(){
+        return "";
     }
 
 }

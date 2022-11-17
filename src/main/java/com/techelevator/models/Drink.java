@@ -8,8 +8,9 @@ public class Drink extends Item {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 
-    public void printMessage() {
-        System.out.println("Drinky, Drinky, Slurp Slurp!");
+    @Override
+    public String printMessage() {
+        return "Drinky, Drinky, Slurp Slurp!";
     }
 
 }
