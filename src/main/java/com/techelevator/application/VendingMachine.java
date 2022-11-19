@@ -18,10 +18,11 @@ public class VendingMachine
     public void run()
     {
         items = fileReader.readTextFile();
-
+        Inventory vendingItemMap = new Inventory(items);
+        MoneyHandler money = new MoneyHandler();
         UserOutput userOutput = new UserOutput();
         UserInput userInput = new UserInput();
-
+        PurchaseMenu purchase = new PurchaseMenu(money);
 
         while(true)
         {
@@ -35,7 +36,8 @@ public class VendingMachine
             }
             else if(choice.equals("purchase"))
             {
-                // make a purchase
+           purchase.displayPurchaseMenu();
+               // make a purchase
             }
             else if(choice.equals("exit"))
             {
