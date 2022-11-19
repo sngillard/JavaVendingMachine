@@ -1,10 +1,8 @@
 package com.techelevator.models;
 
-import java.math.BigDecimal;
-
 public class Gum extends Item {
     //constrcutor
-    public Gum(String itemName, String itemLocation, BigDecimal itemPrice) {
+    public Gum(String itemName, String itemLocation, Double itemPrice) {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 

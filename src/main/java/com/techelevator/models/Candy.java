@@ -1,10 +1,8 @@
 package com.techelevator.models;
 
-import java.math.BigDecimal;
-
 public class Candy extends Item {
     //constrcutor
-    public Candy(String itemName, String itemLocation, BigDecimal itemPrice) {
+    public Candy(String itemName, String itemLocation, Double itemPrice) {
         super(itemName, itemLocation, itemPrice); //sends info to item constrcutor
     }
 

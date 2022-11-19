@@ -22,10 +22,17 @@ public abstract class Item {
     }
 
     //constrcutor
-    public Item(String itemName, String itemLocation, BigDecimal itemPrice) {
+    public Item(String itemName, String itemLocation, Double itemPrice) {
         this.itemName= itemName;
         this.itemLocation = itemLocation;
-        this.itemPrice = itemPrice;
+        this.itemPrice = new BigDecimal(String.valueOf(itemPrice));
+    }
+
+    //method
+    @Override
+    public String toString() {
+        String itemNameFormatted = String.format("%-15s", itemName);
+        return itemLocation + " | " + itemNameFormatted + " | " + "$" + itemPrice;
     }
 
     //abstract method (public by default)

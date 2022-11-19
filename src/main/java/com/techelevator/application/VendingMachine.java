@@ -1,5 +1,6 @@
 package com.techelevator.application;
 
+
 import com.techelevator.models.FileReader;
 import com.techelevator.models.Item;
 import com.techelevator.ui.UserInput;
@@ -21,6 +22,7 @@ public class VendingMachine
         UserOutput userOutput = new UserOutput();
         UserInput userInput = new UserInput();
 
+
         while(true)
         {
             userOutput.displayHomeScreen();
@@ -28,6 +30,7 @@ public class VendingMachine
 
             if(choice.equals("display"))
             {
+                displayVendingItems(items);
                 // display the vending machine slots
             }
             else if(choice.equals("purchase"))
@@ -41,5 +44,11 @@ public class VendingMachine
             }
         }
     }
-    
+    public void displayVendingItems(List<Item>items) {
+        for(Item eachItem: items) {
+            System.out.println(eachItem);
+        }
+    }
+
+
 }
