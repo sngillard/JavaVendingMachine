@@ -18,6 +18,10 @@ public class MoneyHandler {
         return false;
     }
 
+    //withdraw money - should we include?
+    //get balance - should we include?
+    //return change - should we include?
+
     public BigDecimal getBalance() {
         return balance;
     }
