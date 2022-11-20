@@ -1,6 +1,11 @@
 package com.techelevator.ui;
 
+import com.techelevator.models.FileReader;
+import com.techelevator.models.Item;
+
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,6 +15,11 @@ import java.util.Scanner;
  */
 public class UserInput {
     private Scanner scanner = new Scanner(System.in);
+    private FileReader fileReader = new FileReader();
+
+
+                                                                                                                   //you can do the constructor anywhere but instide a method
+
 
     public String getHomeScreenOption() {
         System.out.println("What would you like to do?");
@@ -53,22 +63,28 @@ public class UserInput {
 
         if (option.equals("M")) {
             return "Feed";
+
         } else if (option.equals("S")) {
 
             System.out.println("Enter the item location: ");
-            // displayVendingItems(items);
-            String selectedLocation = scanner.nextLine();
-            String location = selectedOption.trim().toUpperCase();
-
+//             displayVendingItems(items);
+//            String selectedLocation = scanner.nextLine();
+//            String location = selectedOption.trim().toUpperCase();
+                return "Select";
 
         } else if (option.equals("F")) {
             return "Finish";
         } else {
-            return "";
+            return ""; //
 
         }
 
-return null;
     }
+public String getMoneyInput(){
+    // I want to ask the user how much money to feed into the machine:
+    System.out.println("Please enter  $1, 5, 10, 20");
+    String amountFed = scanner.nextLine();
+    return amountFed;  //add to the purchase menu to tie it together for running the program
+}
 
 }

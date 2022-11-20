@@ -1,19 +1,27 @@
 package com.techelevator.application;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+
+import com.techelevator.models.FileReader;
+import com.techelevator.models.Item;
 import com.techelevator.ui.UserInput;
 import java.io.ObjectInputStream;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PurchaseMenu {
 UserInput input = new UserInput();
 MoneyHandler money;
 //Inventory purchaseInventory;
+private List<Item> listOfVendingItems = new ArrayList<>();
+private FileReader fileReader = new FileReader();
 
 public int itemStock = 6;
 
  public PurchaseMenu(MoneyHandler money) {
- this.money = money;
+   this.money = money;
+   listOfVendingItems = fileReader.readTextFile();
  }
 
  public int getItemStock(){
@@ -31,22 +39,38 @@ public int itemStock = 6;
   itemStock-=1;
  }
  public void displayPurchaseMenu () {
-   String choice =  input.getPurchaseMenu();  //
+ //
+
+   while(true) {
+    String choice =  input.getPurchaseMenu();
     if(choice.equals("Feed"))
     {
-        this.money.addMoney(BigDecimal.ZERO); //BigDecimal.Zero is a placeholder
-        // display balance
+
+     String moneyFed= input.getMoneyInput(); //
+
+     this.money.addMoney(new BigDecimal(moneyFed)); //
+     // display balance
+     System.out.println(this.money.getBalance());
     }
     else if(choice.equals("Select"))
     {
-        //we need to get the users selection
+
+      for(Item item : listOfVendingItems) {
+       System.out.println(item);
+      }
+
+     //we need to get the users selection
      // make a purchase
     }
     else if(choice.equals("Finish"))
     {
-        // good bye
+     // good bye
+     break;
 
     }
+   }
+
+
 }
 }
 

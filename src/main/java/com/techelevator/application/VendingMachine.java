@@ -16,16 +16,18 @@ public class VendingMachine
     private FileReader fileReader = new FileReader();
     List<Item> items = new ArrayList<>();
 
+
     public void run()
     {
         items = fileReader.readTextFile();
         Inventory vendingItemMap = new Inventory(items);
         MoneyHandler money = new MoneyHandler();
+
         UserOutput userOutput = new UserOutput();
         UserInput userInput = new UserInput();
         PurchaseMenu purchase = new PurchaseMenu(money);
         Scanner scanner = new Scanner(System.in);
-        while(true)
+        while(true)     //this is where the program loop begins, and we need to manually leave the loop
         {
             userOutput.displayHomeScreen();
             String choice = userInput.getHomeScreenOption();
@@ -33,24 +35,23 @@ public class VendingMachine
             if(choice.equals("display"))
             {
 
-                displayVendingItems(items);
-                // display the vending machine slots
+                displayVendingItems(items)
+           ;     // display the vending machine slots
             }
             else if(choice.equals("purchase"))
             {
 
            purchase.displayPurchaseMenu();
-              String itemSelection = scanner.nextLine();// make a purchase
+            //  String itemSelection = scanner.nextLine();// make a purchase
             }
-            else if(choice.equals("exit"))
-         System.out.println("Thank you for shopping!");
-            {
-
-                break;
+            else if(choice.equals("exit")) {
+                System.out.println("Thank you for shopping!");
+                break;  //if the chose exit, then end program
             }
         }
     }
-    public void displayVendingItems(List<Item>items) {
+
+    public void displayVendingItems(List<Item>items) { //this is where we are calling the method
         for(Item eachItem: items) {
             System.out.println(eachItem);
         }
