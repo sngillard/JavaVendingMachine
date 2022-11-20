@@ -1,18 +1,35 @@
 package com.techelevator.application;
-
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import com.techelevator.ui.UserInput;
-
+import java.io.ObjectInputStream;
 import java.math.BigDecimal;
 
 public class PurchaseMenu {
 UserInput input = new UserInput();
 MoneyHandler money;
+//Inventory purchaseInventory;
+
+public int itemStock = 6;
+
  public PurchaseMenu(MoneyHandler money) {
  this.money = money;
-
  }
 
+ public int getItemStock(){
+  return itemStock;
+ }
 
+ public boolean isSelectionAvailable(){
+  if (this.itemStock >=1){
+  return true;
+  }
+  return false;
+
+  }
+ public void selectItem(){
+  itemStock-=1;
+ }
  public void displayPurchaseMenu () {
    String choice =  input.getPurchaseMenu();  //
     if(choice.equals("Feed"))
@@ -22,7 +39,8 @@ MoneyHandler money;
     }
     else if(choice.equals("Select"))
     {
-        // make a purchase
+        //we need to get the users selection
+     // make a purchase
     }
     else if(choice.equals("Finish"))
     {
@@ -41,4 +59,4 @@ MoneyHandler money;
 
 
  */
-/*
+

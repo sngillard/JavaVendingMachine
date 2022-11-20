@@ -8,6 +8,7 @@ import com.techelevator.ui.UserOutput;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class VendingMachine 
 {
@@ -23,7 +24,7 @@ public class VendingMachine
         UserOutput userOutput = new UserOutput();
         UserInput userInput = new UserInput();
         PurchaseMenu purchase = new PurchaseMenu(money);
-
+        Scanner scanner = new Scanner(System.in);
         while(true)
         {
             userOutput.displayHomeScreen();
@@ -31,17 +32,20 @@ public class VendingMachine
 
             if(choice.equals("display"))
             {
+
                 displayVendingItems(items);
                 // display the vending machine slots
             }
             else if(choice.equals("purchase"))
             {
+
            purchase.displayPurchaseMenu();
-               // make a purchase
+              String itemSelection = scanner.nextLine();// make a purchase
             }
             else if(choice.equals("exit"))
+         System.out.println("Thank you for shopping!");
             {
-                // good bye
+
                 break;
             }
         }

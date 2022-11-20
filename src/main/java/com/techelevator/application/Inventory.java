@@ -12,7 +12,7 @@ public class Inventory {
     public Inventory (List<Item> items) {
         for (Item eachItem : items){
             vendingItemsAndLocation.put(eachItem.getItemLocation(), eachItem);
-            int initialCount = 6;
+
         } 
 
     }

@@ -1,5 +1,5 @@
 package com.techelevator.application;
-
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 
 public class MoneyHandler {
@@ -13,6 +13,11 @@ public class MoneyHandler {
         boolean is20 = (moneyToAdd.compareTo(new BigDecimal("20")) == 0);
         if (is1 || is5 || is10 || is20) {
             balance = balance.add(moneyToAdd);
+         /*
+                String userInput;
+            System.out.println("Please only enter amounts: 1, 5, 10, 20");
+        */
+
             return true;
         }
         return false;

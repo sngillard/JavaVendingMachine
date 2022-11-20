@@ -8,12 +8,10 @@ import java.util.Scanner;
  * 
  * Dependencies: None
  */
-public class UserInput
-{
+public class UserInput {
     private Scanner scanner = new Scanner(System.in);
 
-    public String getHomeScreenOption()
-    {
+    public String getHomeScreenOption() {
         System.out.println("What would you like to do?");
         System.out.println();
 
@@ -27,27 +25,19 @@ public class UserInput
         String selectedOption = scanner.nextLine();
         String option = selectedOption.trim().toUpperCase();
 
-        if (option.equals("D"))
-        {
+        if (option.equals("D")) {
             return "display";
-        }
-        else if (option.equals("P"))
-        {
+        } else if (option.equals("P")) {
             return "purchase";
-        }
-        else if (option.equals("E"))
-        {
+        } else if (option.equals("E")) {
             return "exit";
-        }
-        else
-        {
+        } else {
             return "";
         }
 
     }
 
-    public String getPurchaseMenu()
-    {
+    public String getPurchaseMenu() {
         System.out.println("What would you like to do?");
         System.out.println();
 
@@ -61,25 +51,24 @@ public class UserInput
         String selectedOption = scanner.nextLine();
         String option = selectedOption.trim().toUpperCase();
 
-        if (option.equals("M"))
-        {
+        if (option.equals("M")) {
             return "Feed";
-        }
-        else if (option.equals("S"))
-        {
-            return "Select";
-        }
-        else if (option.equals("F"))
-        {
+        } else if (option.equals("S")) {
+
+            System.out.println("Enter the item location: ");
+            // displayVendingItems(items);
+            String selectedLocation = scanner.nextLine();
+            String location = selectedOption.trim().toUpperCase();
+
+
+        } else if (option.equals("F")) {
             return "Finish";
-        }
-        else
-        {
+        } else {
             return "";
+
         }
 
+return null;
     }
 
-
 }
-
