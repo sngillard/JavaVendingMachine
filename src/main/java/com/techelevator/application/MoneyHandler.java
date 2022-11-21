@@ -30,4 +30,31 @@ public class MoneyHandler {
     public BigDecimal getBalance() {
         return balance;
     }
+    public void setBalance(BigDecimal updatedBalance) {
+        this.balance = updatedBalance;
+    }
+
+    public void returnChange() {
+        BigDecimal wholeDollar = new BigDecimal("1.00");
+        BigDecimal wholeQuarter = new BigDecimal("0.25");
+        BigDecimal wholeDime = new BigDecimal("0.10");
+        BigDecimal wholeNickel = new BigDecimal("0.05");
+        int dollarCounter = 0;
+        int quarterCounter = 0;
+        int dimeCounter = 0;
+        int nickelCounter = 0;
+        dollarCounter = this.balance.divide(wholeDollar).intValue();
+        this.balance = this.balance.remainder(wholeDollar);
+
+        quarterCounter = this.balance.divide(wholeQuarter).intValue();
+        this.balance = this.balance.remainder(wholeQuarter);
+
+        dimeCounter = this.balance.divide(wholeDime).intValue();
+        this.balance = this.balance.remainder(wholeDime);
+
+        nickelCounter = this.balance.divide(wholeNickel).intValue();
+        this.balance = this.balance.remainder(wholeNickel);
+
+        System.out.println("Your change is" + ": " + dollarCounter + " dollars, " + quarterCounter + " quarters, " + dimeCounter + " dimes, " + nickelCounter + " nickels");
+    }
 }

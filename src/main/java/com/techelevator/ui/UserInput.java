@@ -87,4 +87,9 @@ public String getMoneyInput(){
     return amountFed;  //add to the purchase menu to tie it together for running the program
 }
 
+public String getSelectedItem() {
+    System.out.println("Select an item: ");
+    String itemSelected = scanner.nextLine();
+    return itemSelected;
+}
 }

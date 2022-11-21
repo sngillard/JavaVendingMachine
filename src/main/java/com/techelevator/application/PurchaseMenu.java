@@ -49,8 +49,8 @@ public int itemStock = 6;
      String moneyFed= input.getMoneyInput(); //
 
      this.money.addMoney(new BigDecimal(moneyFed)); //
-     // display balance
-     System.out.println(this.money.getBalance());
+        // display balance
+        System.out.println(this.money.getBalance());
     }
     else if(choice.equals("Select"))
     {
@@ -59,12 +59,23 @@ public int itemStock = 6;
        System.out.println(item);
       }
 
+      String theSelectedItem = input.getSelectedItem();
+      for(Item eachItem : listOfVendingItems) {
+       if(eachItem.getItemLocation().equals(theSelectedItem)) {
+        BigDecimal getTheItemPrice = eachItem.getItemPrice();
+        BigDecimal updatedBalance = money.getBalance().subtract(getTheItemPrice);
+        money.setBalance(updatedBalance);
+           System.out.println(this.money.getBalance());
+           eachItem.decrementInventoryCount();
+       }
+      }
+
      //we need to get the users selection
      // make a purchase
     }
     else if(choice.equals("Finish"))
     {
-     // good bye
+     money.returnChange();
      break;
 
     }
